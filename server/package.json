@@ -1,0 +1,26 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "test-server",
+  "main": "server.js",
+  "license": "MIT",
+  "imports": {
+    "#middlewares": "./src/middlewares/index.js",
+    "#controllers": "./src/controllers/index.js",
+    "#models": "./src/models/index.js",
+    "#routes": "./src/routes/index.js",
+    "#data/*": "./src/data/*",
+    "#*": "./src/*"
+  },
+  "dependencies": {
+    "dotenv": "^16.3.1",
+    "fastify": "^4.23.2"
+  },
+  "scripts": {
+    "node": "nodemon server.js",
+    "dev": "nodemon server.js"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  }
+}
