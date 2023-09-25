@@ -1,3 +1,3 @@
-const { getItemOpts, getItemsOpts } = require('./item');
+const itemsOptions = require('./item');
 
-module.exports = { getItemOpts, getItemsOpts }
+module.exports = { itemsOptions };

@@ -1,3 +1,5 @@
+const { itemsController } = require('#controllers');
+
 // Item schema
 const Item = {
   type: 'object',
@@ -5,7 +7,7 @@ const Item = {
     id: { type: 'string' },
     name: { type: 'string' },
   },
-}
+};
 
 // Options for get all items
 const getItemsOpts = {
@@ -22,7 +24,8 @@ const getItemsOpts = {
       },
     },
   },
-}
+  handler: itemsController.getItems,
+};
 
 const getItemOpts = {
   schema: {
@@ -35,6 +38,10 @@ const getItemOpts = {
       },
     },
   },
-}
+  handler: itemsController.getItem,
+};
 
-module.exports = { getItemOpts, getItemsOpts };
+module.exports = {
+  getItemsOpts,
+  getItemOpts
+}
