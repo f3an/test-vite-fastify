@@ -12,8 +12,13 @@ const getItemsOpts = {
   schema: {
     response: {
       200: {
-        type: 'array',
-        items: Item,
+        data: {
+          type: 'array',
+          items: Item,
+        },
+        success: {
+          type: 'boolean'
+        }
       },
     },
   },
@@ -22,7 +27,12 @@ const getItemsOpts = {
 const getItemOpts = {
   schema: {
     response: {
-      200: Item,
+      200: {
+        data: Item,
+        success: {
+          type: 'boolean'
+        }
+      },
     },
   },
 }
