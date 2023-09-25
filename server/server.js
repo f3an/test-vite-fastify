@@ -4,9 +4,9 @@ const app = build({ logger: true });
 
 const start = async () => {
     try {
-        await app.listen(process.env.PORT || 5000, '0.0.0.0')
+        await app.listen(process.env.PORT || 5000, 'localhost')
     } catch (error) {
-        fastify.log.error(error);
+        console.error(error);
         process.exit(1)
     }
 };
