@@ -1,8 +1,13 @@
 const { itemsOptions } = require('#models');
+const { getItemsOpts, getItemOpts, postItemOpts, deleteItemOpts, updateItemOpts } = itemsOptions;
 
 const itemsRoute = (fastify, options, done) => {
-    fastify.get("/", itemsOptions.getItemsOpts);
-    fastify.get("/:id", itemsOptions.getItemOpts);
+    fastify.get("/", getItemsOpts);
+    fastify.get("/:id", getItemOpts);
+
+    fastify.post('/', postItemOpts);
+    fastify.delete('/:id', deleteItemOpts);
+    fastify.put('/:id', updateItemOpts);
   
     done();
 };
