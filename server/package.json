@@ -18,7 +18,8 @@
     "@fastify/swagger": "^8.10.1",
     "@fastify/swagger-ui": "^1.9.3",
     "dotenv": "^16.3.1",
-    "fastify": "^4.23.2"
+    "fastify": "^4.23.2",
+    "swagger-themes": "^1.2.30"
   },
   "scripts": {
     "node": "nodemon server.js",
