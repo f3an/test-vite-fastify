@@ -7,6 +7,8 @@
   "imports": {
     "#middlewares": "./src/middlewares/index.js",
     "#controllers": "./src/controllers/index.js",
+    "#options": "./src/options/index.js",
+    "#helpers": "./src/helpers/index.js",
     "#models": "./src/models/index.js",
     "#routes": "./src/routes/index.js",
     "#data/*": "./src/data/*",
