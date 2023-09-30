@@ -4,24 +4,29 @@ const { getItems, getItem, addItem, deleteItem, updateItem } = itemsController;
 
 // Options for get all items
 const getItemsOpts = {
-    schema: {
-      description: 'Mathod for get all items',
-      tags: ['Items'],
-      summary: 'GET ITEMS',
-      response: {
-        200: {
-          type: 'object',
-          properties: {
-            data: {
-              type: 'array',
-              items: itemSchema,
-            },
-            success: { type: 'boolean' },
+  schema: {
+    description: 'Mathod for get all items',
+    tags: ['Items'],
+    summary: 'GET ITEMS',
+    response: {
+      200: {
+        type: 'object',
+        properties: {
+          data: {
+            type: 'array',
+            items: itemSchema,
           },
+          success: { type: 'boolean' },
         },
       },
     },
-    handler: getItems,
+    security: [
+      {
+        "apiKey": []
+      }
+    ]
+  },
+  handler: getItems,
 };
   
 const getItemOpts = {
@@ -29,6 +34,12 @@ const getItemOpts = {
       description: 'Mathod for get item by Id',
       tags: ['Items'],
       summary: 'GET ITEM BY ID',
+      params: {
+        type: 'object',
+        properties: {
+          id: { type: 'string' },
+        },
+      },
       response: {
         200: {
           type: 'object',
@@ -39,6 +50,11 @@ const getItemOpts = {
         },
         500: errorSchema,
       },
+      security: [
+        {
+          "apiKey": []
+        }
+      ]
     },
     handler: getItem,
 };
@@ -67,6 +83,11 @@ const postItemOpts = {
           },
         },
       },
+      security: [
+        {
+          "apiKey": []
+        }
+      ]
     },
     handler: addItem,
 };
@@ -76,6 +97,12 @@ const deleteItemOpts = {
       description: 'Mathod for delete item by Id',
       tags: ['Items'],
       summary: 'DELETE ITEM BY ID',
+      params: {
+        type: 'object',
+        properties: {
+          id: { type: 'string' },
+        },
+      },
       response: {
         200: {
           type: 'object',
@@ -86,6 +113,11 @@ const deleteItemOpts = {
         },
         500: errorSchema,
       },
+      security: [
+        {
+          "apiKey": []
+        }
+      ]
     },
     handler: deleteItem,
 };
@@ -95,6 +127,19 @@ const updateItemOpts = {
       description: 'Mathod for update item by Id',
       tags: ['Items'],
       summary: 'UPDATE ITEM BY ID',
+      params: {
+        type: 'object',
+        properties: {
+          id: { type: 'string' },
+        },
+      },
+      body: {
+        type: 'object',
+        required: ['name'],
+        properties: {
+          name: { type: 'string' },
+        },
+      },
       response: {
         200: {
           type: 'object',
@@ -105,16 +150,21 @@ const updateItemOpts = {
         },
         500: errorSchema,
       },
+      security: [
+        {
+          "apiKey": []
+        }
+      ]
     },
     handler: updateItem,
 };
 
 
 module.exports = {
-    getItemsOpts,
-    getItemOpts,
-    postItemOpts,
-    deleteItemOpts,
-    updateItemOpts
+  getItemsOpts,
+  getItemOpts,
+  postItemOpts,
+  deleteItemOpts,
+  updateItemOpts
 };
   

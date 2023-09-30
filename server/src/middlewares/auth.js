@@ -1,13 +1,13 @@
 const auth = async (req, reply) => {
     try {
-        const token = req.headers.authorization;
+        const apikey = req.headers.apikey;
         const API_KEY = process.env.API_KEY;
 
         if (req.url.startsWith('/docs')) {
             return;
         }
 
-        if (!token || token !== API_KEY ) {
+        if (!apikey || (apikey !== API_KEY)) {
             return reply.code(409).send({ error: 'Unauthorized' });
         };
 

@@ -22,7 +22,7 @@ const build = (opts = {}) => {
           email: 'cherniavskyiihor@gmail.com'
         }
       },
-      host: `127.0.0.1:${process.env.PORT}`,
+      host: `localhost:${process.env.PORT}`,
       tags: [
         { name: 'Items', description: 'Item\'s API' }
       ],
@@ -30,6 +30,18 @@ const build = (opts = {}) => {
       schemes: ['http', 'https'],
       consumes: ['application/json'],
       produces: ['application/json'],
+      uiConfig: {
+        docExpansion: 'none', // expand/not all the documentations none|list|full
+        deepLinking: true
+      },
+      securityDefinitions: {
+        apiKey: {
+          type: 'apiKey',
+          description: 'Insert here your API Key',
+          name: 'apikey',
+          in: 'header'
+        } 
+      }
     },
   });
 
