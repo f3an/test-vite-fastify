@@ -1,4 +1,4 @@
-const { itemsOptions } = require('#models');
+const { itemsOptions } = require('#options');
 const { getItemsOpts, getItemOpts, postItemOpts, deleteItemOpts, updateItemOpts } = itemsOptions;
 
 const itemsRoute = (fastify, options, done) => {
