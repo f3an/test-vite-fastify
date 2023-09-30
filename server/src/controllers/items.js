@@ -8,12 +8,11 @@ const getItem = (req, reply) => {
     const { id } = req.params;
         
     const result = Items.find((item) => item.id === id);
-    console.log("🚀 ~ file: items.js:11 ~ getItem ~ result:", result)
     if (result) {
         reply.code(200).send({ data: result, success: true });
     };
     
-    reply.code(500).send({ message: 'Item not found', success: false });
+    reply.code(500).send({ code: 'NOT FOUND', message: 'Item not found', success: false });
 };
 
 const addItem = (req, reply) => {
@@ -38,7 +37,7 @@ const deleteItem = (req, reply) => {
         reply.code(200).send({ message: `Item ${id} was deleted`, success: true });
     };
 
-    reply.code(500).send({ message: 'Item not found', success: false });
+    reply.code(500).send({ code: 'NOT FOUND', message: 'Item not found', success: false });
 };
 
 const updateItem = (req, reply) => {
@@ -53,7 +52,7 @@ const updateItem = (req, reply) => {
         reply.code(200).send({ data: item, success: true });
     };
 
-    reply.code(500).send({ message: 'Item not found', success: false });
+    reply.code(500).send({ code: 'NOT FOUND', message: 'Item not found', success: false });
 
 };
 

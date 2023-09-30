@@ -10,6 +10,7 @@ const getItemsOpts = {
     summary: 'GET ITEMS',
     response: {
       200: {
+        description: 'Returns Items array',
         type: 'object',
         properties: {
           data: {
@@ -19,6 +20,7 @@ const getItemsOpts = {
           success: { type: 'boolean' },
         },
       },
+      409: errorSchema,
     },
     security: [
       {
@@ -42,12 +44,14 @@ const getItemOpts = {
       },
       response: {
         200: {
+          description: 'Returns Item model',
           type: 'object',
           properties: {
             data: itemSchema,
             success: { type: 'boolean' },
           },
         },
+        409: errorSchema,
         500: errorSchema,
       },
       security: [
@@ -71,17 +75,17 @@ const postItemOpts = {
           name: { type: 'string' },
         },
       },
-  
-      schema: {
-        response: {
-          201: {
-            type: 'object',
-            properties: {
-              data: itemSchema,
-              success: { type: 'boolean' },
-            },
+      response: {
+        201: {
+          description: 'Returns Item model and status',
+          type: 'object',
+          properties: {
+            data: itemSchema,
+            success: { type: 'boolean' },
           },
         },
+        409: errorSchema,
+        500: errorSchema,
       },
       security: [
         {
@@ -105,12 +109,14 @@ const deleteItemOpts = {
       },
       response: {
         200: {
+          description: 'Returns status',
           type: 'object',
           properties: {
             message: { type: 'string' },
             success: { type: 'boolean' },
           },
         },
+        409: errorSchema,
         500: errorSchema,
       },
       security: [
@@ -142,12 +148,14 @@ const updateItemOpts = {
       },
       response: {
         200: {
+          description: 'Returns Item model and status',
           type: 'object',
           properties: {
             data: itemSchema,
             success: { type: 'boolean' },
           },
         },
+        409: errorSchema,
         500: errorSchema,
       },
       security: [
