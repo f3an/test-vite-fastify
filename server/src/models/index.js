@@ -1,3 +1,4 @@
-const itemsOptions = require('./item');
+const { itemSchema } = require('./item');
+const { errorSchema } = require('./error');
 
-module.exports = { itemsOptions };
+module.exports = { itemSchema, errorSchema };
