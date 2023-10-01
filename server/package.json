@@ -11,6 +11,7 @@
     "#helpers": "./src/helpers/index.js",
     "#models": "./src/models/index.js",
     "#routes": "./src/routes/index.js",
+    "#config": "./src/config/index.js",
     "#data/*": "./src/data/*",
     "#*": "./src/*"
   },
