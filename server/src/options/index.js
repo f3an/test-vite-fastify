@@ -1,3 +1,3 @@
 const itemsOptions = require('./itemOptions');
 
-module.exports = { itemsOptions };
+module.exports = {itemsOptions};

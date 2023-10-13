@@ -1,3 +1,3 @@
 const itemsController = require('./items');
 
-module.exports = { itemsController };
+module.exports = {itemsController};

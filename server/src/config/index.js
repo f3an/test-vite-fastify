@@ -1,3 +1,3 @@
-const { swaggerConfig } = require('./swaggerConfig');
+const {swaggerConfig} = require('./swaggerConfig');
 
-module.exports = { swaggerConfig };
+module.exports = {swaggerConfig};

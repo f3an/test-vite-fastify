@@ -1,10 +1,8 @@
-const { errorSchema, itemSchema } = require('#models')
+const {errorSchema, itemSchema} = require('#models');
 
-const swaggerDefinitions = () => {
-    return ({
-        itemSchema,
-        errorSchema
-    });
-};
+const swaggerDefinitions = () => ({
+	itemSchema,
+	errorSchema,
+});
 
-module.exports = { swaggerDefinitions }
+module.exports = {swaggerDefinitions};

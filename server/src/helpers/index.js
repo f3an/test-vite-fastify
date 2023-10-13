@@ -1,3 +1,4 @@
-const { swaggerDefinitions } = require('./swaggerDefinitions');
+const {swaggerDefinitions} = require('./swaggerDefinitions');
+const {logger} = require('./logger');
 
-module.exports = { swaggerDefinitions };
+module.exports = {swaggerDefinitions, logger};
